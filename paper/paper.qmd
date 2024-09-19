@@ -1,0 +1,89 @@
+---
+title: "Marriage Licence Statistics"
+subtitle: "My subtitle if needed"
+author: 
+  - Dezhen CHen
+thanks: "Code and data are available at: LINK."
+date: today
+date-format: long
+abstract: "This project simulates marriage licence data using a Poisson distribution and analyzes trends in issuance over time. The simulated dataset is supplemented with real data from Toronto's marriage licence statistics, which is cleaned and organized using R. The results, visualized through graphs, provide insights into the patterns of marriage licences issued, offering a statistical exploration of the data."
+
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
+
+```
+
+
+# Introduction
+
+You can and should cross-reference sections and sub-sections. We use @talia, @opendatatorotno, and @rohan.
+
+The remainder of this paper is structured as follows. @sec-mydatasection
+
+
+
+# Data {#sec-mydatasection}
+
+Some of our data is of penguins (@fig-marriage), from @palmerpenguins.
+
+```{r}
+#| label: fig-marriage
+#| fig-cap: Bills of penguins
+#| echo: false
+
+data |> 
+  ggplot(aes(x = date, y = marriage_licenses)) +
+  geom_point()
+
+```
+
+This scatter plot visualizes the number of marriage licenses issued over time. The x-axis represents the date, spanning from before 2015 to around 2025, and the y-axis shows the number of marriage licenses, with values ranging from 0 to over 1500. The data points are scattered relatively evenly between 2010 and 2020, with some fluctuations, but after 2020, there seems to be an increase in the number of marriage licenses issued, as indicated by more points in the higher range (above 1000). This trend might reflect a post-pandemic rebound or another external factor influencing marriage rates.
+
+And also planes (@fig-planes). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
+
+
+
+
+
+# Discussion
+
+## First discussion point {#sec-first-point}
+
+If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+
+## Second discussion point
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+Weaknesses and next steps should also be included.
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+
+# Additional data details
+
+
+
+\newpage
+
+
+# References
+
+
